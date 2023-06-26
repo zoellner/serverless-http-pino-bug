@@ -1,0 +1,31 @@
+service: serverless-http-pino-bug
+
+frameworkVersion: '3'
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  region: us-east-1
+  stage: ${self:custom.stage}
+
+  endpointType: REGIONAL
+
+custom:
+  stage: ${opt:stage, 'local'}
+  serverless-offline:
+    httpPort: 8080
+    lambdaPort: 8081
+    noPrependStageInUrl: true
+
+functions:
+  ProxyFunction:
+    handler: index.handler
+    events:
+      - http:
+          path: /
+          method: GET
+          cors: true
+          integration: lambda-proxy

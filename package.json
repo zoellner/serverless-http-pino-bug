@@ -1,0 +1,30 @@
+{
+  "name": "serverless-http-pino-bug",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "sls offline start --reloadHandler --localEnvironment"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zoellner/serverless-http-pino-bug.git"
+  },
+  "author": "Andreas Zoellner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zoellner/serverless-http-pino-bug/issues"
+  },
+  "homepage": "https://github.com/zoellner/serverless-http-pino-bug#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "pino": "^8.14.1",
+    "pino-http": "^8.3.3",
+    "serverless-http": "^3.1.1"
+  },
+  "devDependencies": {
+    "serverless": "^3.32.2",
+    "serverless-offline": "^12.0.4"
+  }
+}
